@@ -1,0 +1,9 @@
+{
+  "name": "garmin-spectre",
+  "version": "0.0.0",
+  "description": "GarminSpectre",
+  "main": "server.js",
+  "author": {
+    "name": ""
+  }
+}
