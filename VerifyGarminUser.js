@@ -1,8 +1,9 @@
 'use strict';
 var url = require('url');
+var fs = require('fs');
+var listM = require('./GoogleSheet');
 
-function MainListen(req, res)
-{
+function MainListen(req, res) {
     var incomingMessage = url.parse(req.url, true);
     var parameters = incomingMessage.query;
 
@@ -14,14 +15,21 @@ function MainListen(req, res)
     oauthVerify = parameters.oauth_verifier
 
     //print confirmation and next steps to the user*********Don't print out the tokens!
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.write('Oauth Token:\n');
-    if(oauthToken != null)
-        res.write(oauthToken);
-    res.write('\nOauth Verify:\n');
-    if (oauthToken != null)
-        res.write(oauthVerify);
-    res.end();
+    if (incomingMessage.pathname == "/google")
+    {
+        //listM.ListMajors();
+    }
+    else
+    { 
+        res.writeHead(200, { 'Content-Type': 'text/plain' });
+        res.write('Oauth Token:\n');
+        if (oauthToken != null)
+            res.write(oauthToken);
+        res.write('\nOauth Verify:\n');
+        if (oauthToken != null)
+            res.write(oauthVerify);
+        res.end();
+    }
 }
 
 module.exports.MainListen = MainListen;
