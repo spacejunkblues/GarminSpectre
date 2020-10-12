@@ -1,0 +1,3 @@
+C:\Users\NEXUS\Documents\Garmin\GarminSpectreAPI\GarminSpectre\obj\Debug\GarminSpectre.njsprojAssemblyReference.cache
+C:\Users\NEXUS\Documents\Garmin\GarminSpectreAPI\GarminSpectre\obj\Debug\GarminSpectre.njsproj.CoreCompileInputs.cache
+C:\Users\NEXUS\Documents\Garmin\GarminSpectreAPI\GarminSpectre\bin\Microsoft.NodejsTools.WebRole.dll
