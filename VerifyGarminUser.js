@@ -26,7 +26,8 @@ function MainListen(req, res) {
         //testing the push service
         res.writeHead(200, { 'Content-Type': 'text/plain' });
         res.write('req:\n');
-        res.write(req);
+        if(req.body!=null)
+            res.write(req.body);
         res.end();
     }
     else
