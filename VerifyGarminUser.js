@@ -19,6 +19,16 @@ function MainListen(req, res) {
     {
         //listM.ListMajors();
     }
+    else if (incomingMessage.pathname == "/dailies")
+    {
+        //var dataObj = JSON.parse();
+
+        //testing the push service
+        res.writeHead(200, { 'Content-Type': 'text/plain' });
+        res.write('req:\n');
+        res.write(req);
+        res.end();
+    }
     else
     { 
         res.writeHead(200, { 'Content-Type': 'text/plain' });
