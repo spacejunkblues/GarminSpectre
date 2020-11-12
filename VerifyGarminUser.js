@@ -2,6 +2,7 @@
 var url = require('url');
 var fs = require('fs');
 var listM = require('./GoogleSheet');
+var test;
 
 function MainListen(req, res) {
     var incomingMessage = url.parse(req.url, true);
@@ -24,10 +25,21 @@ function MainListen(req, res) {
         //var dataObj = JSON.parse();
 
         //testing the push service
+        test = req.body;
         res.writeHead(200, { 'Content-Type': 'text/plain' });
-        res.write('req:\n');
-        if(req.body!=null)
-            res.write(req.body);
+        res.end();
+        //res.writeHead(200, { 'Content-Type': 'text/plain' });
+        //res.write('req:\n');
+        //if(req.body!=null)
+        //    res.write(req.body);
+        //res.end();
+    }
+    else if (incomingMessage.pathname == "/test")
+    {
+        res.writeHead(200, { 'Content-Type': 'text/plain' });
+        res.write('test:\n');
+        if(test!=null)
+            res.write(test);
         res.end();
     }
     else
